@@ -6,7 +6,7 @@ const openai = new OpenAI({
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    res.status(405).end();
+    return res.status(500).json({ error: err.message });
     return;
   }
 
