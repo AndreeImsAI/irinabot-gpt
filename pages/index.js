@@ -14,8 +14,12 @@ export default function Home() {
       body: JSON.stringify({ prompt }),
     });
 
-    const data = await res.json();
-    setResponse(data.result || "Error");
+    let data;
+try {
+  data = await res.json();
+  setResponse(data.result || "Nu am primit un răspuns valid.");
+} catch (e) {
+  setResponse("A apărut o eroare. Verifică consola.");
   };
 
   return (
