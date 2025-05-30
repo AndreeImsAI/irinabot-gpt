@@ -23,6 +23,7 @@ export default async function handler(req, res) {
 
     res.status(200).json({ result: chatResponse.choices[0].message.content });
   } catch (err) {
+    console.log("EROARE API:", err); // 🔍 Va afișa ce s-a întâmplat în Vercel
     res.status(500).json({ error: err.message });
   }
 }
