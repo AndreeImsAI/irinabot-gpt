@@ -14,13 +14,13 @@ export default function Home() {
       body: JSON.stringify({ prompt }),
     });
 
-    let data;
-try {
-  data = await res.json();
-  setResponse(data.result || "Nu am primit un răspuns valid.");
-} catch (e) {
-  setResponse("A apărut o eroare. Verifică consola.");
-  }
+    try {
+      const data = await res.json();
+      setResponse(data.result || "Nu am primit un răspuns valid.");
+    } catch (e) {
+      setResponse("A apărut o eroare. Verifică consola.");
+    }
+  };
 
   return (
     <div style={{ padding: 40, fontFamily: "sans-serif" }}>
