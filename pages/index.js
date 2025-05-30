@@ -20,7 +20,7 @@ try {
   setResponse(data.result || "Nu am primit un răspuns valid.");
 } catch (e) {
   setResponse("A apărut o eroare. Verifică consola.");
-  };
+  }
 
   return (
     <div style={{ padding: 40, fontFamily: "sans-serif" }}>
