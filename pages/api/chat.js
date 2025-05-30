@@ -18,7 +18,7 @@ export default async function handler(req, res) {
         { role: "system", content: "You are IrinaBot, a warm, kind, and wise AI based on the memories and values of someone dear." },
         { role: "user", content: prompt }
       ],
-      model: "gpt-4",
+      model: "gpt-3.5-turbo",
     });
 
     res.status(200).json({ result: chatResponse.choices[0].message.content });
